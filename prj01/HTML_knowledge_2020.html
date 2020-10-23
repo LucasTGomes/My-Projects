@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <title>Read this and u get a cookie :)</title>
+		<style>
+			
+			#rectangleAreaSpace {
+				visibility: hidden;
+				position: absolute;
+				top: 875px;
+				left: 200px;
+			}
+			
+			#triangleAreaSpace {
+				visibility: hidden;
+				position: absolute;
+				top: 915px;
+				left: 200px;
+			}
+			
+			#circleAreaSpace {
+				visibility: hidden;
+				position: absolute;
+				top: 955px;
+				left: 200px;
+			}
+
+            #additionSpace {
+                visibility: hidden;
+                position: absolute;
+                top: 560px;
+            }
+			
+            #subtractionSpace {
+                visibility: hidden;
+                position: absolute;
+                top: 560px;
+                left: 250px;
+            }
+
+            #multiplicationSpace {
+                visibility: hidden;
+                position: absolute;
+                top: 560px;
+                left: 500px;
+            }
+
+            #divisionSpace {
+                visibility: hidden;
+                position: absolute;
+                top: 650px;
+            }
+            
+            #exponentiationSpace {
+                visibility: hidden;
+                position: absolute;
+                top: 650px;
+                left: 280px;
+            }
+
+            #rootSpace {
+                visibility: hidden;
+                position: absolute;
+                top: 650px;
+                left: 580px;
+            }
+
+		</style>
+	</head>
+	<body>
+	
+		<h1>Welcome!</h1>
+		<h2>Intro</h2>
+		<p>Today I'll show some things that I know about HTML programming.</p>
+		
+		<h2>First</h2>
+		<p>
+            For the first demonstration, I'll create a "thank you" 
+            note from a self-service cashier from a random store.<br>
+            So, what you'll need to do is simply insert your name
+            on the input space and press the "done" button.
+        </p>
+		<p>
+			<label for="name">Customer's Name (Your Name):</label>
+            <input id="name" type="text" size=10px value=""><br></br>
+            <input type="submit" value="Submit" onclick="storeMessage()">
+        </p><br></br>
+        
+        <h2>Next</h2>
+        <p>
+            For this next demonstration, I'll create some basic 
+            mathematical functions. First, click on the button<br>
+            of the function you desire. Then fill the two/three
+            boxes with valid values (in a variables box, insert<br>
+            a letter). Lastly, click submit and you will get your
+            answer.
+        </p>
+
+
+
+        <button onclick="if (document.getElementById('additionSpace').style.visibility === 'hidden')
+        {
+            document.getElementById('additionSpace').style.visibility = 'visible';
+        } else {
+            document.getElementById('additionSpace').style.visibility = 'hidden';
+        };  document.getElementById('addFirst').value = 0;
+            document.getElementById('addSecond').value= 0;">Addition</button>
+
+        <button onclick="if (document.getElementById('subtractionSpace').style.visibility === 'hidden') 
+        {
+            document.getElementById('subtractionSpace').style.visibility = 'visible';
+        } else {
+            document.getElementById('subtractionSpace').style.visibility = 'hidden';
+        };  document.getElementById('subFirst').value = 0;
+            document.getElementById('subSecond').value = 0;">Subtraction</button>
+
+        <button onclick="if (document.getElementById('multiplicationSpace').style.visibility === 'hidden') 
+        {
+            document.getElementById('multiplicationSpace').style.visibility = 'visible';
+        } else {
+            document.getElementById('multiplicationSpace').style.visibility = 'hidden';
+        };  document.getElementById('multiplicand').value = 0;
+            document.getElementById('multiplier').value = 0;">Multiplication</button>
+        <button onclick="if (document.getElementById('divisionSpace').style.visibility === 'hidden') 
+        {
+            document.getElementById('divisionSpace').style.visibility = 'visible';
+        } else {
+            document.getElementById('divisionSpace').style.visibility = 'hidden';
+        };  document.getElementById('dividend').value = 0;
+            document.getElementById('divisor').value = 0;">Division</button>
+        <button  onclick="if (document.getElementById('exponentiationSpace').style.visibility === 'hidden') 
+        {
+            document.getElementById('exponentiationSpace').style.visibility = 'visible';
+        } else {
+            document.getElementById('exponentiationSpace').style.visibility = 'hidden';
+        };  document.getElementById('base').value = 1;
+            document.getElementById('exponent').value = 1;">Exponentiation</button>
+        <button onclick="if (document.getElementById('rootSpace').style.visibility === 'hidden') 
+        {
+            document.getElementById('rootSpace').style.visibility = 'visible';
+        } else {
+            document.getElementById('rootSpace').style.visibility = 'hidden';
+        };  document.getElementById('index').value = 2;
+            document.getElementById('radicand').value = 0;">Root</button>
+
+        <div id="additionSpace">
+            <label for="addFirst">First:</label>
+            <input id="addFirst" type="number", size=3px value=0>
+            <label for="addSecond">Second:</label>
+            <input id="addSecond" type="number" size=3px value=0><br></br>
+            <input type="submit" size=3px value="Submit" onclick="addNumbers()">
+        </div>
+        <div id="subtractionSpace">
+            <label for="subFirst">First:</label>
+            <input id="subFirst" type="number" size=3px value=0>
+            <label for="subSecond">Second:</label>
+            <input id="subSecond" type="number" size=3px value=0><br></br>
+            <input type="submit" size=3px value="Submit" onclick="subtractNumbers()">
+        </div>
+        <div id="multiplicationSpace">
+            <label for="multiplicand">Multiplicand:</label>
+            <input id="multiplicand" type="number" size=3px value=0>
+            <label for="multiplier">Multiplier:</label>
+            <input id="multiplier" type="number" size=3px value=0><br></br>
+            <input type="submit" size=3px value="Submit" onclick="multiplicateNumbers()";>
+        </div>
+        <div id="divisionSpace">
+            <label for="dividend">Dividend:</label>
+            <input id="dividend" type="number" size=3px value=0>
+            <label for="divisor">Divisor:</label>
+            <input id="divisor" type="number" size=3px value=0><br></br>
+            <input type="submit" size=3px value="Submit" onclick="divideNumbers()">
+        </div>
+        <div id="exponentiationSpace">
+            <label for="base">Base:</label>
+            <input id="base" type="text" size=3px value=0>
+            <label for="exponent">Exponent/Power:</label>
+            <input id="exponent" type="number" size=3px value=0><br></br>
+            <input type="submit" size=3px value="Submit" onclick="powerNumbers()">
+        </div>
+        <div id="rootSpace">
+            <label for="index">Index:</label>
+            <input id="index" type="number" size=3px value=0>
+            <label for="radicand">Radicand:</label>
+            <input id="radicand" type="number" size=3px value=0><br></br>
+            <input type="submit" size=3px value="Submit" onclick="indexRootOfNumbers()">
+        </div>
+
+        <br><br/><br><br/><br><br/><br><br/><br><br/>
+        <h2>Last</h2>
+		<p>
+            For the last demonstration, I'll create three mathematical 
+            functions: rectangleArea, triangleArea, and circleArea.<br> 
+            First, you'll need to choose a function by clicking its 
+            button (by doing that, other buttons will appear).<br> 
+            Next, you will choose the value of the shape's dimension(s) 
+            (length and width for rectangle, base and height triangle,<br> 
+            radius for circle). Finally, click the "calculate" 
+            button, and your answer will appear.
+        </p></br>
+
+        <button onclick="if (document.getElementById('rectangleAreaSpace').style.visibility === 'hidden') 
+        {
+            document.getElementById('rectangleAreaSpace').style.visibility = 'visible';
+        } else {
+            document.getElementById('rectangleAreaSpace').style.visibility = 'hidden';
+        };
+						 document.getElementById('length').value = 0;
+						 document.getElementById('width').value = 0;"
+				>rectangleArea</button><p></p>
+        <button onclick="if (document.getElementById('triangleAreaSpace').style.visibility === 'hidden') 
+        {
+            document.getElementById('triangleAreaSpace').style.visibility = 'visible';
+        }
+         else {
+            document.getElementById('triangleAreaSpace').style.visibility = 'hidden';
+        };
+						 document.getElementById('Tbase').value = 0,
+						 document.getElementById('height').value = 0;"
+						 >triangleArea</button><p></p>
+        <button onclick="if (document.getElementById('circleAreaSpace').style.visibility === 'hidden')
+        {
+            document.getElementById('circleAreaSpace').style.visibility = 'visible';
+        } else {
+            document.getElementById('circleAreaSpace').style.visibility = 'hidden';
+        };
+						 document.getElementById('radius').value = 0;"
+                >circleArea</button>
+                
+		<div id="rectangleAreaSpace">
+			<label for="length">Length:</label>
+			<input id="length" type="number" size=3px value=0>
+			<label for="width">Width:</label>
+			<input id="width" type="number" size=3px value=0>
+			<input type="Submit" size=3px value="Calculate" onclick="rectangleArea()">
+		</div>
+		<div id="triangleAreaSpace">
+			<label for="Tbase">Base:</label>
+			<input id="Tbase" type="number" size=3px value=0>
+			<label for="height">Height:</label>
+			<input id="height" type="number" size=3px value=0>
+			<input type="Submit" size=3px value="Calculate" onclick="triangleArea()">
+		</div>
+		<div id="circleAreaSpace">
+			<label for="radius">Radius:</label>
+			<input id="radius" type="number" size=3px value=0>
+			<input type="Submit" size=3px value="Calculate" onclick="circleArea()">
+		</div>
+		
+		<script>
+
+            const spaces = ["additionSpace","subtractionSpace",
+            "multiplicationSpace","divisionSpace","exponentiationSpace",
+            "rootSpace","rectangleAreaSpace","triangleAreaSpace",
+            "circleAreaSpace"];
+
+            for (let i = 0; i < spaces.length; i++) {
+                document.getElementById(spaces[i]).style.visibility = 'hidden';
+            }
+
+            document.getElementById('name').value = '';
+            
+            let length = 0;
+			let width = 0;
+			let Tbase = 0;
+			let height = 0;
+			let radius = 0;
+            
+            
+
+			function storeMessage(name) {
+				name = document.getElementById('name').value;
+                if (name) {
+                    alert('Thanks for shopping at our store, ' + name + '! Have a great day!');
+                } else {
+                    alert('Thanks for shopping at our store anonymous! Have a great day!');
+                }
+                
+			};
+            
+            
+
+            function addNumbers(addFirst,addSecond) {
+                addFirst = Number(document.getElementById('addFirst').value);
+                addSecond = Number(document.getElementById('addSecond').value);
+                let answer = addFirst + addSecond;
+                alert(answer);
+            };
+
+            function subtractNumbers(subFirst,subSecond) {
+                subFirst = Number(document.getElementById('subFirst').value);
+                subSecond = Number(document.getElementById('subSecond').value);
+                let answer = subFirst - subSecond;
+                alert(answer);
+            };
+
+			function multiplicateNumbers(multiplicand,multiplier) {
+                multiplicand = Number(document.getElementById('multiplicand').value);
+                multiplier = Number(document.getElementById('multiplier').value);
+                let answer = multiplicand * multiplier;
+                alert(answer);
+            };
+
+            function divideNumbers(dividend,divisor) {
+                dividend = Number(document.getElementById('dividend').value);
+                divisor = Number(document.getElementById('divisor').value);
+                let answer = dividend / divisor;
+                alert(answer);
+            };
+
+            function powerNumbers(base,exponent) {
+                base = Number(document.getElementById('base').value);
+                exponent = Number(document.getElementById('exponent').value);
+                let answer = base ** exponent;
+                alert(answer);
+            };
+
+            function indexRootOfNumbers(index,radicand) {
+                index = Number(document.getElementById('index').value);
+                radicand = Number(document.getElementById('radicand').value);
+                for (let Answer = 0; Answer < 999; Answer++) {
+                    let findAnswer = Answer ** index;
+                    if (findAnswer === radicand) {
+                        alert(Answer);
+                        break;
+                    }
+                    if (Answer === 99) {
+                        alert('sowy, something went wrong (giant number, simple mistake or root not possible) :*(');
+                        break;
+                    }
+                };
+            };
+
+
+
+			function rectangleArea(length,width) {
+				length = Number(document.getElementById('length').value);
+				width = Number(document.getElementById('width').value);
+				let answer = length*width;
+				alert('Your answer is: ' + answer);
+			}
+			
+			function triangleArea(base,height) {
+				Tbase = Number(document.getElementById('Tbase').value);
+				height = Number(document.getElementById('height').value);
+				let answer = (Tbase*height)/2;
+				alert('Your answer is: ' + answer);
+			}
+			
+			function circleArea(radius) {
+				radius = Number(document.getElementById('radius').value);
+				let answer = Math.floor((3.14*radius)**2);
+				alert('Your answer is: ' + answer);
+			}
+			
+		</script>
+		
+	</body>
+</html>
